@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Virtual</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <header class="encabezado">
+        <h1 class="titulo">Mi tienda</h1>
+
+        <button class="carrito" type="button" aria-label="Abrir carrito">
+            🛒
+            <span class="cantidad">0</span>
+        </button>
+    </header>
+
+    <main>
+        <section class="productos" aria-labelledby="titulo-productos">
+            <header class="cabecera-productos">
+                <h2 id="titulo-productos">Productos</h2>
+                <p>
+                    Explora nuestros productos y agrégalos al carrito.
+                </p>
+            </header>
+
+            <article class="producto">
+                <button class="imagen" type="button">
+                    <img src="img/ .jpg" alt="Audífonos inalámbricos">
+                </button>
+                <h3>Audífonos inalámbricos</h3>
+
+                <p class="descripcion">
+                    Audífonos Bluetooth con cancelación de ruido
+                    y batería de larga duración.
+                </p>
+
+                <p class="precio">$120.000</p>
+
+                <button class="agregar" type="button">
+                    Agregar al carrito
+                </button>
+
+            </article>
+
+            <article class="producto">
+                <button class="imagen" type="button">
+                    <img src="img/1081778773011400418.jpg" alt="Teclado mecánico">
+                </button>
+
+                <h3>Teclado mecánico</h3>
+
+                <p class="descripcion">
+                    Teclado mecánico compacto con iluminación RGB
+                    y switches mecánicos.
+                </p>
+
+                <p class="precio">$180.000</p>
+
+                <button class="agregar" type="button">
+                    Agregar al carrito
+                </button>
+
+            </article>
+
+            <article class="producto">
+                <button class="imagen" type="button">
+                    <img src="img/Daily itachi (@dailyitachi) on X.jpg" alt="Mouse inalámbrico">
+                </button>
+
+                <h3>Mouse inalámbrico</h3>
+
+                <p class="descripcion">
+                    Mouse inalámbrico ergonómico con sensor de alta
+                    precisión.
+                </p>
+
+                <p class="precio">$90.000</p>
+
+                <button class="agregar" type="button">
+                    Agregar al carrito
+                </button>
+
+            </article>
+
+            <article class="producto">
+
+                <button class="imagen" type="button">
+                    <img
+                        src="img/IMG_5630.JPG"
+                        alt="Monitor"
+                    >
+                </button>
+
+                <h3>Monitor 27"</h3>
+
+                <p class="descripcion">
+                    Monitor de 27 pulgadas con resolución Quad HD
+                    y alta frecuencia de actualización.
+                </p>
+
+                <p class="precio">$950.000</p>
+
+                <button class="agregar" type="button">
+                    Agregar al carrito
+                </button>
+
+            </article>
+
+        </section>
+
+
+        <aside class="ventana-carrito" aria-labelledby="titulo-carrito">
+
+            <header>
+                <h2 id="titulo-carrito">Carrito</h2>
+
+                <button type="button" aria-label="Cerrar carrito">
+                    ×
+                </button>
+            </header>
+
+
+            <ul class="lista">
+            </ul>
+
+
+            <footer class="total">
+
+                <p>
+                    Total
+                    <strong>$0</strong>
+                </p>
+
+                <button type="button">
+                    Comprar
+                </button>
+
+            </footer>
+
+        </aside>
+
+    </main>
+
+
+    <footer class="pie">
+
+        <p>
+            &copy; 2026 Mi tienda. Todos los derechos reservados.
+        </p>
+
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
