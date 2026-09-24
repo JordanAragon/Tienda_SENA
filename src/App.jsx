@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Cabecera from "./componentes/Cabecera.jsx";
+import Header from "./componentes/Header.jsx";
 import Producto from "./componentes/Producto.jsx";
 import Carrito from "./componentes/Carrito.jsx";
 import Pie from "./componentes/Pie.jsx";
@@ -42,7 +42,7 @@ function App() {
 
   return (
     <>
-      <Cabecera
+      <Header
         cantidad={obtenerCantidad()}
         abrirCarrito={() => setCarritoAbierto(true)}
       />
