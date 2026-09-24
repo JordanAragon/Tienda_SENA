@@ -3,7 +3,6 @@ import Header from "./componentes/Header.jsx";
 import Hero from "./componentes/Hero.jsx";
 import Categorias from "./componentes/Categorias.jsx";
 import Producto from "./componentes/Producto.jsx";
-import Beneficios from "./componentes/Beneficios.jsx";
 import Carrito from "./componentes/Carrito.jsx";
 import Pie from "./componentes/Pie.jsx";
 import { productos } from "./datos/productos.js";
@@ -119,7 +118,6 @@ function App() {
           </section>
         </section>
 
-        <Beneficios />
       </main>
 
       <Carrito

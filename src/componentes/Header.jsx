@@ -18,11 +18,6 @@ function Header({ cantidad, abrirCarrito }) {
                 Productos
               </a>
             </li>
-            <li>
-              <a className="transition hover:text-white" href="#beneficios">
-                Beneficios
-              </a>
-            </li>
           </ul>
         </nav>
 

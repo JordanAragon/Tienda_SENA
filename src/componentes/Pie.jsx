@@ -5,7 +5,7 @@ function Pie() {
         <header>
           <h2 className="text-lg font-bold">Mi tienda</h2>
           <p className="mt-2 text-sm leading-6 text-[#999999]">
-            Una tienda virtual sencilla desarrollada como proyecto SENA.
+            Una tienda virtual sencilla.
           </p>
         </header>
 
@@ -22,24 +22,17 @@ function Pie() {
                 Productos
               </a>
             </li>
-            <li>
-              <a className="hover:text-white" href="#beneficios">
-                Beneficios
-              </a>
-            </li>
           </ul>
         </nav>
 
         <section>
-          <h2 className="mb-3 text-sm font-semibold text-white">Proyecto</h2>
           <p className="text-sm leading-6 text-[#999999]">
-            Proyecto académico desarrollado con React, Vite y Tailwind CSS.
           </p>
         </section>
       </section>
 
       <p className="border-t border-[#242424] px-5 py-5 text-center text-xs text-[#777777] sm:px-8">
-        © 2026 Mi tienda. Todos los derechos reservados.
+        © 2026 Mi tienda.
       </p>
     </footer>
   );
