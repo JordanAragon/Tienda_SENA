@@ -31,12 +31,10 @@ function Pie() {
         </nav>
 
         <section>
-          <h2 className="mb-3 text-sm font-semibold text-white">Contacto</h2>
-          <address className="not-italic text-sm leading-6 text-[#999999]">
-            Bogotá, Colombia
-            <br />
-            tienda@sena.com
-          </address>
+          <h2 className="mb-3 text-sm font-semibold text-white">Proyecto</h2>
+          <p className="text-sm leading-6 text-[#999999]">
+            Proyecto académico desarrollado con React, Vite y Tailwind CSS.
+          </p>
         </section>
       </section>
 
