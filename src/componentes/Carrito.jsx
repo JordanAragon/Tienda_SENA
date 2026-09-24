@@ -2,6 +2,8 @@ function Carrito({
   abierto,
   productos,
   cerrarCarrito,
+  aumentarCantidad,
+  disminuirCantidad,
   eliminarProducto,
 }) {
   const total = productos.reduce(
@@ -14,14 +16,19 @@ function Carrito({
       aria-labelledby="titulo-carrito"
       className={
         abierto
-          ? "fixed inset-y-0 right-0 z-50 flex w-full max-w-md flex-col border-l border-[#242424] bg-[#181818] p-8 shadow-2xl"
+          ? "fixed inset-y-0 right-0 z-50 flex w-full max-w-md flex-col border-l border-[#242424] bg-[#181818] p-6 shadow-2xl sm:p-8"
           : "hidden"
       }
     >
       <header className="flex items-center justify-between border-b border-[#242424] pb-6">
-        <h2 id="titulo-carrito" className="text-2xl font-bold">
-          Carrito
-        </h2>
+        <section>
+          <h2 id="titulo-carrito" className="text-2xl font-bold">
+            Carrito
+          </h2>
+          <p className="mt-1 text-sm text-[#999999]">
+            Revisa tus productos antes de comprar.
+          </p>
+        </section>
 
         <button
           type="button"
@@ -35,38 +42,74 @@ function Carrito({
 
       <ul className="flex flex-1 flex-col gap-4 overflow-y-auto py-6">
         {productos.length === 0 && (
-          <li className="text-sm text-[#999999]">
-            Tu carrito está vacío.
+          <li className="rounded-lg border border-dashed border-[#2f2f2f] p-5 text-sm text-[#999999]">
+            Tu carrito está vacío. Agrega un producto para comenzar.
           </li>
         )}
 
         {productos.map((producto) => (
           <li
             key={producto.id}
-            className="grid grid-cols-[1fr_auto_auto] items-center gap-3 border-b border-[#242424] pb-4"
+            className="border-b border-[#242424] pb-4"
           >
-            <span className="text-sm text-[#c4c4c4]">
-              {producto.nombre} x{producto.cantidad}
-            </span>
+            <section className="flex items-start justify-between gap-4">
+              <section>
+                <h3 className="text-sm font-semibold">{producto.nombre}</h3>
+                <p className="mt-1 text-sm text-[#999999]">
+                  {producto.precio.toLocaleString("es-CO", {
+                    style: "currency",
+                    currency: "COP",
+                    maximumFractionDigits: 0,
+                  })}
+                </p>
+              </section>
 
-            <span className="text-sm text-[#c4c4c4]">
-              {(producto.precio * producto.cantidad).toLocaleString(
-                "es-CO",
-                {
-                  style: "currency",
-                  currency: "COP",
-                  maximumFractionDigits: 0,
-                }
-              )}
-            </span>
+              <button
+                type="button"
+                onClick={() => eliminarProducto(producto.id)}
+                className="text-xs text-[#999999] hover:text-white"
+              >
+                Eliminar
+              </button>
+            </section>
 
-            <button
-              type="button"
-              onClick={() => eliminarProducto(producto.id)}
-              className="text-sm text-[#999999] hover:text-white"
-            >
-              Eliminar
-            </button>
+            <footer className="mt-3 flex items-center justify-between">
+              <section
+                aria-label={`Cantidad de ${producto.nombre}`}
+                className="flex items-center gap-3"
+              >
+                <button
+                  type="button"
+                  onClick={() => disminuirCantidad(producto.id)}
+                  aria-label={`Disminuir cantidad de ${producto.nombre}`}
+                  className="h-8 w-8 rounded-md border border-[#2f2f2f] text-[#c4c4c4] hover:border-[#999999] hover:text-white"
+                >
+                  −
+                </button>
+
+                <span>{producto.cantidad}</span>
+
+                <button
+                  type="button"
+                  onClick={() => aumentarCantidad(producto.id)}
+                  aria-label={`Aumentar cantidad de ${producto.nombre}`}
+                  className="h-8 w-8 rounded-md border border-[#2f2f2f] text-[#c4c4c4] hover:border-[#999999] hover:text-white"
+                >
+                  +
+                </button>
+              </section>
+
+              <strong className="text-sm">
+                {(producto.precio * producto.cantidad).toLocaleString(
+                  "es-CO",
+                  {
+                    style: "currency",
+                    currency: "COP",
+                    maximumFractionDigits: 0,
+                  }
+                )}
+              </strong>
+            </footer>
           </li>
         ))}
       </ul>
@@ -85,7 +128,8 @@ function Carrito({
 
         <button
           type="button"
-          className="w-full rounded-lg border border-white bg-white px-4 py-3 font-semibold text-[#111111] transition hover:bg-transparent hover:text-white"
+          disabled={productos.length === 0}
+          className="w-full rounded-lg border border-white bg-white px-4 py-3 font-semibold text-[#111111] transition hover:bg-transparent hover:text-white disabled:cursor-not-allowed disabled:border-[#2f2f2f] disabled:bg-[#2f2f2f] disabled:text-[#777777]"
         >
           Comprar
         </button>
