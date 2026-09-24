@@ -16,12 +16,17 @@ function Beneficios() {
 
   return (
     <section
+      id="beneficios"
       aria-labelledby="titulo-beneficios"
       className="border-y border-[#242424] bg-[#151515] py-16"
     >
       <header className="mx-auto max-w-6xl px-5 sm:px-8">
+        <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-[#999999]">
+          Nuestra propuesta
+        </p>
+
         <h2 id="titulo-beneficios" className="mb-8 text-2xl font-bold">
-          ¿Por qué comprar aquí?
+          Una compra sencilla
         </h2>
 
         <section className="grid grid-cols-1 gap-4 md:grid-cols-3">
