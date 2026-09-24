@@ -1,6 +1,6 @@
 function Hero() {
   return (
-    <section className="border-b border-[#242424] bg-[#111111]">
+    <section id="inicio" className="border-b border-[#242424] bg-[#111111]">
       <header className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-20 sm:px-8 lg:py-24">
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#999999]">
           Tienda SENA
